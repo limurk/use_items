@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79431B27-86B2-4F0B-9A92-DD3AE8E84B1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ItemManager</RootNamespace>
+    <AssemblyName>ItemManager</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ensage">
+      <HintPath>C:\BanIsComing\References\Ensage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ensage.Common">
+      <HintPath>C:\BanIsComing\References\Ensage.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ensage.SDK">
+      <HintPath>C:\BanIsComing\References\Ensage.SDK.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PlaySharp.Toolkit">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\BanIsComing\References\PlaySharp.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics">
+      <HintPath>C:\BanIsComing\References\SharpDX.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\AbilityAttribute.cs" />
+    <Compile Include="Attributes\AbilityBasedModuleAttribute.cs" />
+    <Compile Include="Attributes\ModuleAttribute.cs" />
+    <Compile Include="Core\Abilities\Abyssal.cs" />
+    <Compile Include="Core\Abilities\Armlet.cs" />
+    <Compile Include="Core\Abilities\Base\DefensiveAbility.cs" />
+    <Compile Include="Core\Abilities\Base\OffensiveAbility.cs" />
+    <Compile Include="Core\Abilities\Base\Shrine.cs" />
+    <Compile Include="Core\Abilities\BlinkDagger.cs" />
+    <Compile Include="Core\Abilities\GuardianGreaves.cs" />
+    <Compile Include="Core\Abilities\HurricanePike.cs" />
+    <Compile Include="Core\Abilities\Interfaces\IDefensiveAbility.cs" />
+    <Compile Include="Core\Abilities\Interfaces\IOffensiveAbility.cs" />
+    <Compile Include="Core\Abilities\MagicStick.cs" />
+    <Compile Include="Core\Abilities\Mekansm.cs" />
+    <Compile Include="Core\Abilities\Satanic.cs" />
+    <Compile Include="Core\Abilities\SpiritVessel.cs" />
+    <Compile Include="Core\Abilities\UrnOfShadows.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Core\Abilities\ArcaneBoots.cs" />
+    <Compile Include="Core\Abilities\Bottle.cs" />
+    <Compile Include="Core\Abilities\PowerTreads.cs" />
+    <Compile Include="Core\Abilities\SoulRing.cs" />
+    <Compile Include="Core\Abilities\Base\UsableAbility.cs" />
+    <Compile Include="Core\Abilities\Interfaces\IRecoveryAbility.cs" />
+    <Compile Include="Core\Abilities\VeilOfDiscord.cs" />
+    <Compile Include="Core\Modules\AbilityBasedModuleManager.cs" />
+    <Compile Include="Core\Modules\AbilityHelper\BlinkAdjustment.cs" />
+    <Compile Include="Core\Modules\AbilityHelper\TranquilDrop.cs" />
+    <Compile Include="Core\Modules\AutoActions\AutoMidas.cs" />
+    <Compile Include="Core\Modules\AutoActions\AutoPhaseBoots.cs" />
+    <Compile Include="Core\Modules\AutoActions\AutoDust.cs" />
+    <Compile Include="Core\Modules\AutoActions\HpMpRestore\AutoTango.cs" />
+    <Compile Include="Core\Modules\AutoActions\HpMpRestore\AutoArcaneBoots.cs" />
+    <Compile Include="Core\Modules\AutoActions\HpMpRestore\AutoBottle.cs" />
+    <Compile Include="Core\Modules\AutoActions\AutoDewarding.cs" />
+    <Compile Include="Core\Modules\AutoActions\HpMpRestore\AutoLivingArmor.cs" />
+    <Compile Include="Core\Modules\AutoActions\HpMpRestore\InstantHealthRestoreItem.cs" />
+    <Compile Include="Core\Modules\AutoActions\PowerTreadsSwitcher.cs" />
+    <Compile Include="Core\Modules\AutoActions\AutoSoulRing.cs" />
+    <Compile Include="Core\Modules\AutoActions\TechiesMinesDestroyer.cs" />
+    <Compile Include="Core\Modules\CourierHelper\CourierHelper.cs" />
+    <Compile Include="Core\Manager.cs" />
+    <Compile Include="Core\Modules\DefensiveAbilities\DefensiveAbilities.cs" />
+    <Compile Include="Core\Modules\GoldSpender\GoldSpender.cs" />
+    <Compile Include="Core\Modules\Interfaces\IAbilityBasedModule.cs" />
+    <Compile Include="Core\Modules\ItemSwapper\ItemSwapper.cs" />
+    <Compile Include="Core\Modules\OffensiveAbilities\OffensiveAbilities.cs" />
+    <Compile Include="Core\Modules\RecoveryAbuse\RecoveryAbuse.cs" />
+    <Compile Include="Core\Modules\ShrineHelper\ShrineHelper.cs" />
+    <Compile Include="Core\Modules\Snatcher\Controllables\Controllable.cs" />
+    <Compile Include="Core\Modules\Snatcher\Controllables\MeepoClone.cs" />
+    <Compile Include="Core\Modules\Snatcher\Controllables\Hero.cs" />
+    <Compile Include="Core\Modules\Snatcher\Controllables\SpiritBear.cs" />
+    <Compile Include="Core\Modules\Snatcher\Snatcher.cs" />
+    <Compile Include="Core\MyHero.cs" />
+    <Compile Include="EventArgs\AbilityEventArgs.cs" />
+    <Compile Include="EventArgs\BoolEventArgs.cs" />
+    <Compile Include="EventArgs\IntEventArgs.cs" />
+    <Compile Include="EventArgs\ItemEventArgs.cs" />
+    <Compile Include="EventArgs\UnitEventArgs.cs" />
+    <Compile Include="Menus\Modules\AbilityHelper\AbilityHelperMenu.cs" />
+    <Compile Include="Menus\Modules\AbilityHelper\BlinkMenu.cs" />
+    <Compile Include="Menus\Modules\AbilityHelper\TranquilMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\DustMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\MidasMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\PhaseBootsMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\HpMpRestore\AutoArcaneBootsMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\AutoActionsMenu.cs" />
+    <Compile Include="Core\Modules\AutoActions\Order.cs" />
+    <Compile Include="Menus\Modules\AutoActions\HpMpRestore\AutoBottleMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\DewardingMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\TechiesMinesDestroyerMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\AutoHealsMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\HpMpRestore\AutoTangoMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\HpMpRestore\InstantHealthRestoreItemMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\HpMpRestore\LivingArmorMenu.cs" />
+    <Compile Include="Menus\Modules\CourierHelper\CourierHelperMenu.cs" />
+    <Compile Include="Menus\Modules\DefensiveAbilities\AbilitySettings\DefensiveAbilitySettings.cs" />
+    <Compile Include="Menus\Modules\DefensiveAbilities\DefensiveAbilitiesMenu.cs" />
+    <Compile Include="Menus\Modules\GoldSpender\GoldSpenderMenu.cs" />
+    <Compile Include="Menus\Modules\ItemSwap\Auto.cs" />
+    <Compile Include="Menus\Modules\ItemSwap\Backpack.cs" />
+    <Compile Include="Menus\Modules\ItemSwap\Courier.cs" />
+    <Compile Include="Menus\Modules\ItemSwap\Stash.cs" />
+    <Compile Include="Menus\Modules\ItemSwap\ItemSwapMenu.cs" />
+    <Compile Include="Menus\MenuManager.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\PowerTreadsMenu.cs" />
+    <Compile Include="Menus\Modules\OffensiveAbilities\AbilitySettings\OffensiveAbilitySettings.cs" />
+    <Compile Include="Menus\Modules\OffensiveAbilities\AbilitySettings\SatanicSettings.cs" />
+    <Compile Include="Menus\Modules\OffensiveAbilities\OffensiveAbilitiesMenu.cs" />
+    <Compile Include="Menus\Modules\Recovery\ItemSettings\BottleSettings.cs" />
+    <Compile Include="Menus\Modules\Recovery\ItemSettings\PowerTreadsSettings.cs" />
+    <Compile Include="Menus\Modules\Recovery\ItemSettings\SettingsMenu.cs" />
+    <Compile Include="Menus\Modules\Recovery\ItemSettings\ItemSettingsMenu.cs" />
+    <Compile Include="Menus\Modules\Recovery\ItemSettings\SoulRingSettings.cs" />
+    <Compile Include="Menus\Modules\Recovery\RecoveryMenu.cs" />
+    <Compile Include="Menus\Modules\ShrineHelper\ShrineHelperMenu.cs" />
+    <Compile Include="Menus\Modules\Snatcher\SnatcherMenu.cs" />
+    <Compile Include="Menus\Modules\AutoActions\Actions\SoulRingMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CourierUtils.cs" />
+    <Compile Include="Utils\CreepUtils.cs" />
+    <Compile Include="Utils\EntityUtils.cs" />
+    <Compile Include="Utils\ItemUtils.cs" />
+    <Compile Include="Utils\ModifierUtils.cs" />
+    <Compile Include="Utils\ModuleUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
