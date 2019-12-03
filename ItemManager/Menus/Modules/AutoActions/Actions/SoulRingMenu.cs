@@ -25,11 +25,13 @@
                 };
             IsEnabled = enabled.IsActive();
 
+
             var universal = new MenuItem("srUniversalUse", "Universal use").SetValue(true);
             universal.SetTooltip("If enabled soul ring will work with all other assemblies otherwise only when player used ability");
             menu.AddItem(universal);
             universal.ValueChanged += (sender, args) => UniversalUseEnabled = args.GetNewValue<bool>();
             UniversalUseEnabled = universal.IsActive();
+
 
             var invis = new MenuItem("srUseWhenInvis", "Use when invisible").SetValue(false);
             invis.SetTooltip("Use soul ring if your hero is invisible");
@@ -37,11 +39,13 @@
             invis.ValueChanged += (sender, args) => UseWhenInvisible = args.GetNewValue<bool>();
             UseWhenInvisible = invis.IsActive();
 
+
             var hpThreshold = new MenuItem("soulRingHpThreshold", "HP% threshold").SetValue(new Slider(70));
             hpThreshold.SetTooltip("Use soul ring if you have more hp%");
             menu.AddItem(hpThreshold);
             hpThreshold.ValueChanged += (sender, args) => HpThreshold = args.GetNewValue<Slider>().Value;
             HpThreshold = hpThreshold.GetValue<Slider>().Value;
+
 
             var mpThreshold = new MenuItem("soulRingMpThreshold", "MP% threshold").SetValue(new Slider(100));
             mpThreshold.SetTooltip("Use soul ring if you have less mp%");
@@ -49,15 +53,62 @@
             mpThreshold.ValueChanged += (sender, args) => MpThreshold = args.GetNewValue<Slider>().Value;
             MpThreshold = mpThreshold.GetValue<Slider>().Value;
 
+
             var mpAbilityThreshold = new MenuItem("srMpAbilityThreshold", "MP ability threshold").SetValue(new Slider(25));
             mpAbilityThreshold.SetTooltip("Use soul ring when ability costs more mp");
             menu.AddItem(mpAbilityThreshold);
             mpAbilityThreshold.ValueChanged += (sender, args) => MpAbilityThreshold = args.GetNewValue<Slider>().Value;
             MpAbilityThreshold = mpAbilityThreshold.GetValue<Slider>().Value;
 
+
             menu.AddItem(
                 new MenuItem("soulRingAbilities", "Enabled:").SetValue(
                     abilityToggler = new AbilityToggler(new Dictionary<string, bool>())));
+
+
+            mainMenu.AddSubMenu(menu);
+        }            IsEnabled = enabled.IsActive();
+
+
+            var universal = new MenuItem("srUniversalUse", "Universal use").SetValue(true);
+            universal.SetTooltip("If enabled soul ring will work with all other assemblies otherwise only when player used ability");
+            menu.AddItem(universal);
+            universal.ValueChanged += (sender, args) => UniversalUseEnabled = args.GetNewValue<bool>();
+            UniversalUseEnabled = universal.IsActive();
+
+
+            var invis = new MenuItem("srUseWhenInvis", "Use when invisible").SetValue(false);
+            invis.SetTooltip("Use soul ring if your hero is invisible");
+            menu.AddItem(invis);
+            invis.ValueChanged += (sender, args) => UseWhenInvisible = args.GetNewValue<bool>();
+            UseWhenInvisible = invis.IsActive();
+
+
+            var hpThreshold = new MenuItem("soulRingHpThreshold", "HP% threshold").SetValue(new Slider(70));
+            hpThreshold.SetTooltip("Use soul ring if you have more hp%");
+            menu.AddItem(hpThreshold);
+            hpThreshold.ValueChanged += (sender, args) => HpThreshold = args.GetNewValue<Slider>().Value;
+            HpThreshold = hpThreshold.GetValue<Slider>().Value;
+
+
+            var mpThreshold = new MenuItem("soulRingMpThreshold", "MP% threshold").SetValue(new Slider(100));
+            mpThreshold.SetTooltip("Use soul ring if you have less mp%");
+            menu.AddItem(mpThreshold);
+            mpThreshold.ValueChanged += (sender, args) => MpThreshold = args.GetNewValue<Slider>().Value;
+            MpThreshold = mpThreshold.GetValue<Slider>().Value;
+
+
+            var mpAbilityThreshold = new MenuItem("srMpAbilityThreshold", "MP ability threshold").SetValue(new Slider(25));
+            mpAbilityThreshold.SetTooltip("Use soul ring when ability costs more mp");
+            menu.AddItem(mpAbilityThreshold);
+            mpAbilityThreshold.ValueChanged += (sender, args) => MpAbilityThreshold = args.GetNewValue<Slider>().Value;
+            MpAbilityThreshold = mpAbilityThreshold.GetValue<Slider>().Value;
+
+
+            menu.AddItem(
+                new MenuItem("soulRingAbilities", "Enabled:").SetValue(
+                    abilityToggler = new AbilityToggler(new Dictionary<string, bool>())));
+
 
             mainMenu.AddSubMenu(menu);
         }
